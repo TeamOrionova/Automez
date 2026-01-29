@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/* Tailwind CSS v4 Configuration */
+@theme {
+  --color-background: #f4f4f2;
+  /* Paper white */
+  --color-foreground: #0a0a0a;
+  /* Deep ink black */
+  --color-accent: #000000;
+  --color-cobalt: #000000;
+  --color-muted: #d1d1cf;
+  --color-border: #0a0a0a;
+
+  --font-sans: "Inter", var(--font-geist-sans);
+
+  --radius-none: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-full: 9999px;
+
+  --shadow-tactile: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-tactile-sm: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-tactile-hover: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-tactile-active: 0px 0px 0px 0px rgba(0, 0, 0, 1);
+}
+
+:root {
+  --background: #f4f4f2;
+  --foreground: #0a0a0a;
+}
+
+* {
+  @apply border-border;
+  cursor: crosshair;
+  /* Tactile/Precision feel */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .btn-tactile {
+    @apply relative border-2 border-foreground bg-background px-6 py-3 font-bold uppercase tracking-tighter transition-all duration-75 active:translate-x-[2px] active:translate-y-[2px] active:shadow-tactile-active hover:shadow-tactile;
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  .card-tactile {
+    @apply border-2 border-foreground bg-background p-6 transition-all duration-75 hover:shadow-tactile;
+  }
+
+  .link-tactile {
+    @apply relative inline-block font-bold tracking-tight after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-foreground after:transition-all hover:after:w-full;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+}
