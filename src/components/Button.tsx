@@ -11,6 +11,7 @@ interface ButtonProps {
     variant?: "primary" | "secondary";
     disabled?: boolean;
     type?: "button" | "submit" | "reset";
+    href?: string;
 }
 
 export function Button({
@@ -19,22 +20,38 @@ export function Button({
     className,
     variant = "primary",
     disabled,
-    type = "button"
+    type = "button",
+    href
 }: ButtonProps) {
+    const baseStyles = cn(
+        "relative border-2 border-foreground bg-background px-8 py-4 font-bold uppercase tracking-tighter transition-colors duration-75 inline-block text-center",
+        "shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]",
+        variant === "secondary" && "bg-foreground text-background",
+        disabled && "opacity-50 cursor-not-allowed grayscale",
+        className
+    );
+
+    if (href) {
+        return (
+            <motion.a
+                href={href}
+                whileHover={!disabled ? { y: -2, x: -2 } : {}}
+                whileTap={!disabled ? { y: 2, x: 2, boxShadow: "0px 0px 0px 0px rgba(0,0,0,1)" } : {}}
+                className={baseStyles}
+            >
+                {children}
+            </motion.a>
+        );
+    }
+
     return (
         <motion.button
             whileHover={!disabled ? { y: -2, x: -2 } : {}}
-            whileTap={!disabled ? { y: 2, x: 2, boxShadow: "0px 0px 0px 0px rgba(0,0,0,1)" } : {}}
+            whileTap={!disabled ? { y: 2, x: 2, boxShadow: "0px 0px 0px_0px_rgba(0,0,0,1)" } : {}}
             onClick={onClick}
             type={type}
             disabled={disabled}
-            className={cn(
-                "relative border-2 border-foreground bg-background px-8 py-4 font-bold uppercase tracking-tighter transition-colors duration-75",
-                "shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]",
-                variant === "secondary" && "bg-foreground text-background",
-                disabled && "opacity-50 cursor-not-allowed grayscale",
-                className
-            )}
+            className={baseStyles}
         >
             {children}
         </motion.button>

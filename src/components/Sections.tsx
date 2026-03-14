@@ -31,11 +31,11 @@ export function Hero() {
                         Tactile design. Precision code. Absolute conversion.
                     </p>
                     <div className="mt-12 flex gap-4">
-                        <Button className="group bg-accent text-background">
+                        <Button href="/contact" className="group bg-accent text-background">
                             Start Building
                             <ArrowRight className="ml-2 inline-block transition-transform group-hover:translate-x-1" />
                         </Button>
-                        <Button variant="secondary" className="px-6">
+                        <Button href="/#portfolio" variant="secondary" className="px-6">
                             View Deployments
                         </Button>
                     </div>
@@ -149,7 +149,7 @@ export function Portfolio() {
                                 rel={project.link ? "noopener noreferrer" : ""}
                                 className="block group relative overflow-hidden border-2 border-foreground bg-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)]"
                             >
-                                <div className="aspect-[16/10] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+                                <div className="aspect-[16/10] overflow-hidden">
                                     <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                                 </div>
                                 <div className="p-6 border-t-2 border-foreground">
