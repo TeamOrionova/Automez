@@ -2,10 +2,12 @@ import { Navbar } from "@/components/Navbar";
 import { Hero, Statement, Capabilities, Portfolio, Footer } from "@/components/Sections";
 import { ContactForm } from "@/components/ContactForm";
 import { Container, Section } from "@/components/Layout";
+import { AIContext } from "@/components/AIContext";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <AIContext />
       <Navbar />
       <Hero />
       <Statement />
