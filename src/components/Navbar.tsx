@@ -24,6 +24,7 @@ export function Navbar() {
                 <div className="hidden gap-8 md:flex">
                     <a href="/" className="link-tactile uppercase text-sm font-bold">Home</a>
                     <a href="/services" className="link-tactile uppercase text-sm font-bold">Services</a>
+                    <a href="/pricing" className="link-tactile uppercase text-sm font-bold">Pricing</a>
                     <a href="/#portfolio" className="link-tactile uppercase text-sm font-bold">Portfolio</a>
                     <a href="/contact" className="link-tactile uppercase text-sm font-bold">Contact</a>
                 </div>
@@ -55,6 +56,7 @@ export function Navbar() {
                         <div className="flex flex-col gap-6">
                             <a href="/" onClick={() => setIsOpen(false)} className="text-2xl font-black uppercase tracking-tighter">Home</a>
                             <a href="/services" onClick={() => setIsOpen(false)} className="text-2xl font-black uppercase tracking-tighter">Services</a>
+                            <a href="/pricing" onClick={() => setIsOpen(false)} className="text-2xl font-black uppercase tracking-tighter">Pricing</a>
                             <a href="/#portfolio" onClick={() => setIsOpen(false)} className="text-2xl font-black uppercase tracking-tighter">Portfolio</a>
                             <a href="/contact" onClick={() => setIsOpen(false)} className="text-2xl font-black uppercase tracking-tighter">Contact</a>
                             <button className="w-full border-2 border-foreground bg-accent px-6 py-4 text-sm font-black text-background uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">

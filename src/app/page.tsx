@@ -26,6 +26,53 @@ export default function Home() {
 
       <Portfolio />
 
+      {/* Testimonials */}
+      <Section className="bg-muted/20">
+        <Container>
+          <div className="mb-12 sm:mb-16">
+            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-accent mb-4">Client Feedback</h3>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter">
+              What Clients Say
+            </h2>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="border-2 border-foreground bg-background p-6 sm:p-8">
+              <p className="text-lg font-medium mb-6 italic">
+                "Fast turnaround, modern design, and excellent communication. 
+                Our new site has significantly improved our online presence."
+              </p>
+              <div>
+                <p className="font-black uppercase tracking-tight">Rajesh Kumar</p>
+                <p className="text-sm text-foreground/60">Roop Stone Impex</p>
+              </div>
+            </div>
+
+            <div className="border-2 border-foreground bg-background p-6 sm:p-8">
+              <p className="text-lg font-medium mb-6 italic">
+                "The e-commerce platform they built handles our inventory perfectly. 
+                The admin panel makes managing orders a breeze."
+              </p>
+              <div>
+                <p className="font-black uppercase tracking-tight">Priya Sharma</p>
+                <p className="text-sm text-foreground/60">Puchi Puchi</p>
+              </div>
+            </div>
+
+            <div className="border-2 border-foreground bg-background p-6 sm:p-8">
+              <p className="text-lg font-medium mb-6 italic">
+                "Professional, affordable, and delivered exactly what we needed. 
+                Highly recommend for interior design portfolios."
+              </p>
+              <div>
+                <p className="font-black uppercase tracking-tight">Amit Patel</p>
+                <p className="text-sm text-foreground/60">Vanya Vastu</p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
       <Section id="contact" className="bg-background pt-0">
         <Container>
           <div className="mb-12 sm:mb-16">
