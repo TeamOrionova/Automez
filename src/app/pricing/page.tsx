@@ -270,9 +270,19 @@ export default function PricingPage() {
                                 <h3 className="text-xl font-black uppercase tracking-tighter mb-3">
                                     What's included in the 30-day support?
                                 </h3>
-                                <p className="text-foreground/70 font-medium">
-                                    Bug fixes, minor content updates, and technical support via email. 
-                                    Response time within 48 hours.
+                                <p className="text-foreground/70 font-medium mb-3">
+                                    All projects include 30 days of free post-launch support covering:
+                                </p>
+                                <ul className="space-y-2 text-foreground/70 font-medium ml-4">
+                                    <li>• Bug fixes and error resolution</li>
+                                    <li>• Minor content updates (text, images)</li>
+                                    <li>• Technical support via email</li>
+                                    <li>• Performance monitoring and optimization</li>
+                                    <li>• Security updates if needed</li>
+                                    <li>• Response time: Within 48 hours</li>
+                                </ul>
+                                <p className="text-foreground/70 font-medium mt-3">
+                                    After 30 days, you can choose a maintenance plan or pay hourly for updates.
                                 </p>
                             </div>
 
