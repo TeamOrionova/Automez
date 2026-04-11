@@ -16,8 +16,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://automaez.vercel.app'),
-  title: "automaez - Web Development Agency | Next.js & React Development",
-  description: "automaez is a web development agency specializing in Next.js, React, and TypeScript. Affordable web development starting at $100. E-commerce, portfolios, custom web apps. Based in India, serving worldwide.",
+  title: "automaez - Next.js Web Development Agency India",
+  description: "Affordable Next.js & React development starting at $100. E-commerce, portfolios, custom web apps. Fast delivery, modern tech stack.",
+  alternates: {
+    canonical: 'https://automaez.vercel.app',
+  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },

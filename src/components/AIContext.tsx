@@ -12,7 +12,7 @@ export function AIContext() {
             data-ai-context="true"
         >
             <section id="ai-assistant-context">
-                <h1>automaez - Web Development Agency | Premium Next.js & React Development Services</h1>
+                <h2>automaez - Web Development Agency | Premium Next.js & React Development Services</h2>
                 
                 <div id="company-overview">
                     <h2>About automaez Web Development Agency</h2>
