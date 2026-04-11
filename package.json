@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate-screenshots": "node scripts/generate-screenshots.mjs"
   },
   "dependencies": {
     "autoprefixer": "^10.4.23",
@@ -27,6 +28,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
+    "puppeteer": "^24.40.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 import { Button } from "./Button";
 import { Card } from "./Card";
 import { Container, Section } from "./Layout";
-import { ArrowRight, Box, Layers, MousePointer2, Zap } from "lucide-react";
+import { ArrowRight, Box, Layers, MousePointer2, Zap, ExternalLink } from "lucide-react";
+import { PROJECTS } from "@/data/projects";
+import { useState } from "react";
 
 const snappyTransition = {
     type: "spring" as const,
@@ -88,38 +90,17 @@ const CAPABILITIES = [
     },
 ];
 
-const PROJECTS = [
-    {
-        title: "Vanya Vastu",
-        category: "Interior Design Experience",
-        desc: "A luxury interior design portfolio featuring minimalist aesthetics and warm, tactile digital storytelling.",
-        image: "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&q=80&w=800",
-        link: "https://vanya-vastu.vercel.app/",
-    },
-    {
-        title: "SRK Interior",
-        category: "Modern Architectural UI",
-        desc: "Precision-engineered portfolio for a contemporary design firm, focusing on sleek lines and high-end finishes.",
-        image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800",
-        link: "https://srk-interior.vercel.app/",
-    },
-    {
-        title: "Wanderlust India",
-        category: "Luxury Travel Experience",
-        desc: "A bespoke travel agency platform that showcases India's soul through premium visuals and seamless itineraries.",
-        image: "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&q=80&w=800",
-        link: "https://wanderlust-india-premium.vercel.app/",
-    },
-    {
-        title: "Aura Cafe",
-        category: "Bespoke Web Design",
-        desc: "A sensory-driven cafe experience with ultra-smooth transitions and high-conversion ordering flow.",
-        image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=800",
-        link: "https://aura-cafe-ten.vercel.app/",
-    },
-];
+
 
 export function Portfolio() {
+    const [activeFilter, setActiveFilter] = useState("ALL");
+
+    const categories = ["ALL", "E-COMMERCE", "INTERIOR DESIGN", "FITNESS", "BUSINESS", "TRAVEL"];
+
+    const filteredProjects = activeFilter === "ALL" 
+        ? PROJECTS 
+        : PROJECTS.filter(project => project.category.toUpperCase() === activeFilter);
+
     return (
         <Section id="portfolio" className="bg-background">
             <Container>
@@ -134,8 +115,26 @@ export function Portfolio() {
                         Our frameworks aren't theoretical. They are battle-tested architectures deployed in high-stakes environments.
                     </p>
                 </div>
+
+                {/* Category Filter Bar */}
+                <div className="mb-12 flex flex-wrap gap-3">
+                    {categories.map((category) => (
+                        <button
+                            key={category}
+                            onClick={() => setActiveFilter(category)}
+                            className={`border-2 border-foreground px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all ${
+                                activeFilter === category
+                                    ? "bg-foreground text-background"
+                                    : "bg-background text-foreground hover:bg-foreground/10"
+                            }`}
+                        >
+                            {category}
+                        </button>
+                    ))}
+                </div>
+
                 <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-                    {PROJECTS.map((project, i) => (
+                    {filteredProjects.map((project, i) => (
                         <motion.div
                             key={project.title}
                             initial={{ opacity: 0, y: 20 }}
@@ -143,28 +142,37 @@ export function Portfolio() {
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
                         >
-                            <a
-                                href={project.link || "#"}
-                                target={project.link ? "_blank" : "_self"}
-                                rel={project.link ? "noopener noreferrer" : ""}
-                                className="block group relative overflow-hidden border-2 border-foreground bg-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)]"
-                            >
-                                <div className="aspect-[16/10] overflow-hidden">
-                                    <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                                </div>
-                                <div className="p-6 border-t-2 border-foreground">
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-accent">{project.category}</span>
-                                    <h4 className="mt-2 text-2xl font-black uppercase tracking-tighter">{project.title}</h4>
-                                    <p className="mt-4 text-sm font-medium text-foreground/70 leading-relaxed">
-                                        {project.desc}
-                                    </p>
-                                    <div className="mt-8">
-                                        <div className="text-xs font-bold uppercase tracking-widest border-b-2 border-transparent group-hover:border-accent transition-all inline-block">
-                                            {project.link ? "View Live Project →" : "View System Details →"}
+                            <div className="block group relative overflow-hidden border-2 border-foreground bg-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)]">
+                                {/* External Link Icon */}
+                                <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={(e) => e.stopPropagation()}
+                                    className="absolute top-4 right-4 z-10 bg-background border-2 border-foreground p-2 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-foreground hover:text-background"
+                                    aria-label="View live site"
+                                >
+                                    <ExternalLink className="h-4 w-4" />
+                                </a>
+
+                                <a href={`/portfolio/${project.slug}`} className="block">
+                                    <div className="aspect-[16/10] overflow-hidden">
+                                        <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                                    </div>
+                                    <div className="p-6 border-t-2 border-foreground">
+                                        <span className="text-[10px] font-black uppercase tracking-widest text-accent">{project.category}</span>
+                                        <h4 className="mt-2 text-2xl font-black uppercase tracking-tighter">{project.title}</h4>
+                                        <p className="mt-4 text-sm font-medium text-foreground/70 leading-relaxed">
+                                            {project.desc}
+                                        </p>
+                                        <div className="mt-8">
+                                            <div className="text-xs font-bold uppercase tracking-widest border-b-2 border-transparent group-hover:border-accent transition-all inline-block">
+                                                View Case Study →
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
