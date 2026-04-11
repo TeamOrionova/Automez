@@ -80,7 +80,7 @@ export function ContactForm() {
                             className="w-full border-2 border-foreground bg-background px-4 py-3 font-bold focus:bg-accent/5 focus:outline-none transition-colors"
                         />
                     </div>
-                    <div className="grid gap-6 sm:grid-cols-2">
+                    <div className="grid gap-4 sm:gap-6">
                         <div>
                             <label className="block text-xs font-black uppercase tracking-widest mb-2">Phone Number (Required)</label>
                             <input

@@ -14,10 +14,10 @@ export default function Home() {
       <Capabilities />
 
       {/* Rhythm Reset / Marquee */}
-      <div className="py-20 bg-background border-y-2 border-foreground flex items-center justify-center overflow-hidden">
+      <div className="py-12 sm:py-16 md:py-20 bg-background border-y-2 border-foreground flex items-center justify-center overflow-hidden">
         <div className="flex gap-20 animate-marquee whitespace-nowrap">
           {[...Array(6)].map((_, i) => (
-            <span key={i} className="text-6xl md:text-8xl font-black uppercase tracking-tighter opacity-10 select-none">
+            <span key={i} className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black uppercase tracking-tighter opacity-10 select-none">
               AUTOMAEZ • BESPOKE WEBSITES • AUTOMAEZ •
             </span>
           ))}
@@ -28,9 +28,9 @@ export default function Home() {
 
       <Section id="contact" className="bg-background pt-0">
         <Container>
-          <div className="mb-16">
+          <div className="mb-12 sm:mb-16">
             <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-accent mb-4">Immediate Intake</h3>
-            <h2 className="text-4xl font-black uppercase tracking-tighter md:text-6xl max-w-xl">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter max-w-xl">
               Start Your <br /> Project Brief.
             </h2>
           </div>

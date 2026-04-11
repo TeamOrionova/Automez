@@ -22,7 +22,7 @@ interface SectionProps {
 
 export function Section({ children, className, id }: SectionProps) {
     return (
-        <section id={id} className={cn("py-20 md:py-32", className)}>
+        <section id={id} className={cn("py-12 sm:py-16 md:py-20 lg:py-32", className)}>
             {children}
         </section>
     );

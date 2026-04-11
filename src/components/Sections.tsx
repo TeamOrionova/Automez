@@ -24,20 +24,20 @@ export function Hero() {
                     transition={snappyTransition}
                     className="max-w-4xl"
                 >
-                    <h1 className="text-5xl font-black uppercase leading-[0.9] tracking-tighter sm:text-6xl md:text-9xl">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-black uppercase leading-[0.9] tracking-tighter">
                         CRAFT. <br />
                         <span className="text-accent">CONVERT.</span>
                     </h1>
-                    <p className="mt-8 max-w-xl text-xl font-medium leading-relaxed tracking-tight text-foreground/80 md:text-2xl">
+                    <p className="mt-6 sm:mt-8 max-w-xl text-lg sm:text-xl md:text-2xl font-medium leading-relaxed tracking-tight text-foreground/80">
                         We build high-performance websites for people who don't settle for "good enough."
                         Tactile design. Precision code. Absolute conversion.
                     </p>
-                    <div className="mt-12 flex gap-4">
-                        <Button href="/contact" className="group bg-accent text-background">
+                    <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-4">
+                        <Button href="/contact" className="group bg-accent text-background w-full sm:w-auto">
                             Start Building
                             <ArrowRight className="ml-2 inline-block transition-transform group-hover:translate-x-1" />
                         </Button>
-                        <Button href="/#portfolio" variant="secondary" className="px-6">
+                        <Button href="/#portfolio" variant="secondary" className="px-6 w-full sm:w-auto">
                             View Deployments
                         </Button>
                     </div>
@@ -57,7 +57,7 @@ export function Statement() {
                     transition={{ duration: 0.5 }}
                     className="py-12"
                 >
-                    <h2 className="text-2xl font-bold leading-tight tracking-tighter sm:text-4xl md:text-7xl">
+                    <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-7xl font-bold leading-tight tracking-tighter">
                         &quot;WE DON'T DO GENERIC TEMPLATES. WE BUILD DIGITAL ARCHITECTURE
                         THAT DEMANDS ATTENTION AND DRIVES SALES.&quot;
                     </h2>
@@ -104,25 +104,25 @@ export function Portfolio() {
     return (
         <Section id="portfolio" className="bg-background">
             <Container>
-                <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+                <div className="mb-12 sm:mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6 sm:gap-8">
                     <div className="max-w-xl">
                         <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-accent mb-4">Case Studies</h3>
-                        <h2 className="text-3xl font-black uppercase tracking-tighter sm:text-4xl md:text-6xl">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter">
                             Digital <br /> Deployments.
                         </h2>
                     </div>
-                    <p className="max-w-sm font-medium text-foreground/60 tracking-tight">
+                    <p className="max-w-sm text-base sm:text-lg font-medium text-foreground/60 tracking-tight">
                         Our frameworks aren't theoretical. They are battle-tested architectures deployed in high-stakes environments.
                     </p>
                 </div>
 
                 {/* Category Filter Bar */}
-                <div className="mb-12 flex flex-wrap gap-3">
+                <div className="mb-8 sm:mb-12 flex flex-wrap gap-2 sm:gap-3">
                     {categories.map((category) => (
                         <button
                             key={category}
                             onClick={() => setActiveFilter(category)}
-                            className={`border-2 border-foreground px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all ${
+                            className={`border-2 border-foreground px-3 sm:px-4 py-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-all ${
                                 activeFilter === category
                                     ? "bg-foreground text-background"
                                     : "bg-background text-foreground hover:bg-foreground/10"
@@ -133,7 +133,7 @@ export function Portfolio() {
                     ))}
                 </div>
 
-                <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-8 sm:gap-10 md:gap-12 sm:grid-cols-2 lg:grid-cols-3">
                     {filteredProjects.map((project, i) => (
                         <motion.div
                             key={project.title}
@@ -185,10 +185,10 @@ export function Capabilities() {
     return (
         <Section id="capabilities">
             <Container>
-                <div className="mb-16">
+                <div className="mb-12 sm:mb-16">
                     <h3 className="text-sm font-bold uppercase tracking-[0.2em]">Our Capabilities</h3>
                 </div>
-                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-4">
                     {CAPABILITIES.map((cap, i) => {
                         const Icon = cap.icon;
                         return (
