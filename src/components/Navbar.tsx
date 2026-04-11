@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "./Layout";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { Logo } from "./Logo";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,9 +16,11 @@ export function Navbar() {
                 <motion.div
                     initial={{ opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="text-2xl font-black tracking-tighter uppercase"
                 >
-                    <a href="/">automaez</a>
+                    <a href="/" className="flex items-center gap-2">
+                        <Logo variant="icon" size="sm" />
+                        <span className="text-2xl font-black tracking-tighter uppercase">automaez</span>
+                    </a>
                 </motion.div>
 
                 {/* Desktop Menu */}

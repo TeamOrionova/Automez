@@ -1,0 +1,12 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Brutalist square background -->
+  <rect x="10" y="10" width="80" height="80" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="4"/>
+  <rect x="14" y="14" width="72" height="72" fill="#f4f4f2"/>
+  
+  <!-- Letter A -->
+  <path d="M 35 70 L 45 35 L 55 35 L 65 70 M 42 55 L 58 55" stroke="#0a0a0a" stroke-width="6" stroke-linecap="square" fill="none"/>
+  
+  <!-- Tactile shadow effect -->
+  <rect x="14" y="86" width="72" height="4" fill="#0a0a0a" opacity="0.3"/>
+  <rect x="86" y="14" width="4" height="72" fill="#0a0a0a" opacity="0.3"/>
+</svg>

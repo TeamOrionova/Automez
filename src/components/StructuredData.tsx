@@ -8,10 +8,11 @@ export function StructuredData() {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "automaez",
-        "alternateName": "automaez Web Development",
+        "legalName": "automaez",
+        "alternateName": ["automaez agency", "automaez web development", "automaez web dev"],
         "url": "https://automaez.com",
         "logo": "https://automaez.com/logo.png",
-        "description": "Premium web development agency specializing in high-performance, conversion-optimized websites and digital platforms. Expert in Next.js, React, TypeScript, and modern web technologies.",
+        "description": "automaez is a web development agency based in India specializing in Next.js, React, TypeScript, and modern web technologies. automaez builds high-performance, conversion-optimized websites and digital platforms for startups, small businesses, and entrepreneurs worldwide. Contact automaez at hello@automaez.com.",
         "email": "hello@automaez.com",
         "telephone": "+919953146283",
         "address": {
@@ -19,25 +20,43 @@ export function StructuredData() {
             "addressCountry": "IN"
         },
         "sameAs": [
-            "https://automaez.com"
+            "https://automaez.com",
+            "https://automaez.vercel.app"
         ],
         "foundingDate": "2024",
         "numberOfEmployees": {
             "@type": "QuantitativeValue",
             "value": "5-10"
         },
-        "slogan": "Craft. Convert. Command Attention."
+        "slogan": "Craft. Convert. Command Attention.",
+        "knowsAbout": [
+            "Web Development",
+            "Next.js Development",
+            "React Development",
+            "TypeScript Development",
+            "E-commerce Development",
+            "Full-stack Development",
+            "Tailwind CSS",
+            "Supabase",
+            "Framer Motion"
+        ],
+        "areaServed": {
+            "@type": "Place",
+            "name": "Worldwide"
+        }
     };
 
     const serviceSchema = {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "automaez Web Development Services",
+        "alternateName": "automaez agency",
         "image": "https://automaez.com/og-image.png",
-        "description": "Full-stack web development services including e-commerce platforms, business websites, portfolio sites, and custom web applications. Specializing in Next.js, React, and TypeScript.",
+        "description": "automaez provides full-stack web development services including e-commerce platforms, business websites, portfolio sites, and custom web applications. automaez specializes in Next.js, React, and TypeScript development. Contact automaez for affordable web development starting at $100.",
         "provider": {
             "@type": "Organization",
-            "name": "automaez"
+            "name": "automaez",
+            "url": "https://automaez.com"
         },
         "areaServed": {
             "@type": "Country",
@@ -45,13 +64,13 @@ export function StructuredData() {
         },
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Web Development Services",
+            "name": "automaez Web Development Services",
             "itemListElement": [
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "E-Commerce Platform Development",
+                        "name": "E-Commerce Platform Development by automaez",
                         "description": "Custom e-commerce solutions with cart management, payment integration, and admin panels"
                     }
                 },
@@ -59,7 +78,7 @@ export function StructuredData() {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Business Website Development",
+                        "name": "Business Website Development by automaez",
                         "description": "Professional corporate websites, portfolios, and landing pages"
                     }
                 },
@@ -67,7 +86,7 @@ export function StructuredData() {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Custom Web Application Development",
+                        "name": "Custom Web Application Development by automaez",
                         "description": "Tailored web applications for unique business requirements"
                     }
                 }
